@@ -3,9 +3,11 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config, pool
 
 from alembic import context
+
 from config import settings
 from database import Base
-import models # noqa: F401 — registers models with Base.metadata
+import models  # noqa: F401 — registers models with Base.metadata
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
