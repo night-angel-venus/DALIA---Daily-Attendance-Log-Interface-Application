@@ -1,9 +1,9 @@
-from fastapi import FastAPI, Depends
-import config
-from typing import Annotated
 from functools import lru_cache
+from typing import Annotated
 
+from fastapi import Depends, FastAPI
 
+import config
 
 app = FastAPI()
 

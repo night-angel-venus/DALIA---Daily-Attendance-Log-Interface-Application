@@ -1,7 +1,9 @@
-from sqlalchemy import Column, Integer, String, Enum
-from database import Base
-from sqlalchemy.orm import relationship
 import enum
+
+from sqlalchemy import Column, Enum, Integer, String
+from sqlalchemy.orm import relationship
+
+from database import Base
 
 
 class UserRoleEnum(enum.Enum):

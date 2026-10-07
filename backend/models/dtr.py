@@ -1,8 +1,18 @@
-from sqlalchemy import Column, Integer, String, Enum, Date, DateTime, ForeignKey, UniqueConstraint
-from sqlalchemy.orm import relationship
-from database import Base
-from datetime import datetime
 import enum
+from datetime import datetime
+
+from sqlalchemy import (
+    Column,
+    Date,
+    DateTime,
+    Enum,
+    ForeignKey,
+    Integer,
+    UniqueConstraint,
+)
+from sqlalchemy.orm import relationship
+
+from database import Base
 
 
 class ShiftTypeEnum(enum.Enum):
