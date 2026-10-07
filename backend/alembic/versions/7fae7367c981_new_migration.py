@@ -1,8 +1,8 @@
-"""Initial Migration, Setting up Database
+"""New Migration
 
-Revision ID: 42b994b2dd5f
-Revises: 8a83cf4954ad
-Create Date: 2026-10-05 14:20:17.598297
+Revision ID: 7fae7367c981
+Revises: 
+Create Date: 2026-10-07 10:08:37.492513
 
 """
 from typing import Sequence, Union
@@ -12,8 +12,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '42b994b2dd5f'
-down_revision: Union[str, Sequence[str], None] = '8a83cf4954ad'
+revision: str = '7fae7367c981'
+down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
@@ -24,8 +24,8 @@ def upgrade() -> None:
     op.create_table('users',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('username', sa.String(length=50), nullable=False),
-    sa.Column('email', sa.String(length=50), nullable=False),
-    sa.Column('password_hash', sa.String(length=50), nullable=False),
+    sa.Column('email', sa.String(length=255), nullable=False),
+    sa.Column('password_hash', sa.String(length=255), nullable=False),
     sa.Column('role', sa.Enum('USER', 'ADMIN', name='userroleenum'), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
